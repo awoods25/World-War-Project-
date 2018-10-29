@@ -40,6 +40,7 @@ heading = element heading { mixed{ persName } }
 
 body = element body { p+ }
 
+#Below is the only change I made to our original schema. I simply added a + outside of the curly brace to allow this sequence to be repeated.
 p = element p { mixed{ persName*| placeName*| date*| emotion* }+}
 
 emotion = element emotion { morale, text }
