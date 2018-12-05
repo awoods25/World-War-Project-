@@ -1,21 +1,31 @@
 body {
     background-color: #c0c0c0;
-    text-align: center;
+    text-align: center;  
+    margin: 0;
+    padding: 0;
 }
-
+ul{
+    text-align: left;
+}
 h1 {
     color: white;
 }
-
+header{
+background-image: url("flag.jpg");
+margin: 0;
+padding: 0;
+}
 p {
     font-family: ariel, verdana;
     font-size: 20px;
     border: 2px solid gray;
     border-radius: 8px;
     margin: auto;
-    width: 50%;
+    width: 90%;
     padding: 10px;
-
+}
+#home{
+    max-width: 50%;
 }
 img {
     width:800px;
