@@ -17,8 +17,20 @@
                 </head>
                 
                 <body>
+                    <header>
+                        <h1>World War Letters: Letters</h1>
+                        <a href="../index.html" target="_blank">Home</a>
+                        <a href="letters/timeline_test_1.html" target="_blank">Letters</a>
+                        <a href="../Analysis.html" target="_blank">Analysis</a>
+                        <br/><br/></header><hr/>
+                    <div id="ContentsA">    <h2>Contents: Letters</h2>
+                    <ul><xsl:apply-templates select="$lettersColl//letter" mode="toc">
+                        <xsl:sort order="ascending">
+                            <xsl:variable name="apos">'</xsl:variable>
+                            <xsl:value-of select="translate(descendant::lg[1]/l[1], $apos, '')"/>
+                        </xsl:sort>
+                    </xsl:apply-templates></ul></div><hr/>
                     <xsl:for-each select="$lettersColl">
-                        
                                 <h2><xsl:apply-templates select="//title"/></h2>
                                 <h3><xsl:apply-templates select="//abstract"/></h3>
                         <p><xsl:apply-templates select="//body"/></p>
@@ -27,6 +39,12 @@
                 </body>
             </html>
     </xsl:template>
+    <xsl:template match="letter" mode="toc">
+        <li><strong><xsl:apply-templates select="descendant::title"/></strong>
+        </li>
+    </xsl:template>
+    
+    
     <xsl:template match="emotion[@morale='high']">
         <span class="high"><xsl:apply-templates/></span>
     </xsl:template>
